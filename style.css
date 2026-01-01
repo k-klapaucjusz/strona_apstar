@@ -681,6 +681,10 @@ section.visible {
         grid-template-columns: 40px 1fr;
         gap: 1rem;
     }
+    
+    .service-connector-circle {
+        display: none;
+    }
 
     .oferta-grid {
         grid-template-columns: 1fr;
