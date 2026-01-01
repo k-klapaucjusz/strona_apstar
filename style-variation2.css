@@ -1,0 +1,1637 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --yellow: #FFD700;
+    --dark-gray: #4a4a4a;
+    --light-gray: #f5f5f5;
+    --text-dark: #333;
+    --white: #ffffff;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark);
+    background-color: var(--white);
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Navigation */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(255, 255, 255, 0.98);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 20px;
+}
+
+.logo img {
+    height: 60px;
+    width: auto;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 500;
+    transition: color 0.3s ease;
+    font-size: 0.95rem;
+}
+
+.nav-link:hover {
+    color: var(--yellow);
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background-color: var(--text-dark);
+    transition: all 0.3s ease;
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    height: 100vh;
+    min-height: 600px;
+    overflow: hidden;
+    margin-top: 70px;
+}
+
+.hero-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.3) 100%);
+    display: flex;
+    align-items: center;
+}
+
+.hero-content {
+    max-width: 600px;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: var(--dark-gray);
+    line-height: 1.1;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+}
+
+.fade-in {
+    animation: fadeInUp 1s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Gray Info Section */
+.gray-info {
+    background-color: var(--dark-gray);
+    color: var(--white);
+    padding: 3rem 0;
+    position: relative;
+    margin-bottom: 60px;
+}
+
+.gray-info p {
+    text-align: center;
+    font-size: 0.95rem;
+    line-height: 1.8;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Services Boxes Section */
+.services-boxes {
+    background-color: var(--white);
+    padding: 4rem 0;
+    position: relative;
+    margin-bottom: 60px;
+}
+
+.service-box {
+    display: grid;
+    grid-template-columns: 80px 1fr 80px;
+    gap: 2rem;
+    margin-bottom: 3rem;
+    align-items: start;
+    position: relative;
+}
+
+.service-connector {
+    width: 60px;
+    height: 100%;
+    position: relative;
+    min-height: 200px;
+}
+
+.service-connector.left {
+    border-left: 5px solid var(--yellow);
+    border-bottom: 5px solid var(--yellow);
+    border-bottom-left-radius: 0;
+    height: 150px;
+    margin-top: 40px;
+}
+
+.service-box:last-child .service-connector.left {
+    border-bottom: none;
+}
+
+.service-connector-circle {
+    width: 60px;
+    height: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.service-connector-circle.right::after {
+    content: '';
+    width: 40px;
+    height: 40px;
+    background-color: var(--yellow);
+    border-radius: 50%;
+    display: block;
+}
+
+.service-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.service-content h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.service-image {
+    width: 100%;
+    max-width: 600px;
+}
+
+.service-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Innovation Section */
+.innovation {
+    background-color: var(--light-gray);
+    padding: 4rem 0;
+    position: relative;
+    margin-bottom: 60px;
+}
+
+.innovation h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.innovation p {
+    max-width: 800px;
+    margin: 0 auto 2rem;
+    text-align: center;
+    color: var(--text-dark);
+    line-height: 1.8;
+}
+
+.innovation-graphic {
+    margin: 3rem 0;
+    position: relative;
+    height: 200px;
+}
+
+.graphic-line {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background-color: var(--yellow);
+    transform: translateY(-50%);
+}
+
+.graphic-circles {
+    display: flex;
+    justify-content: space-around;
+    max-width: 600px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    align-items: center;
+}
+
+.circle {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--yellow);
+    position: relative;
+}
+
+.circle::before {
+    content: '';
+    position: absolute;
+    width: 5px;
+    height: 60px;
+    background-color: var(--yellow);
+    left: 50%;
+    transform: translateX(-50%);
+    top: -65px;
+}
+
+.circle:nth-child(even)::before {
+    top: auto;
+    bottom: -65px;
+}
+
+.footer-text {
+    text-align: center;
+    font-style: italic;
+    margin-top: 2rem;
+}
+
+/* Why Choose Section */
+.why-choose {
+    background-color: var(--dark-gray);
+    color: var(--white);
+    padding: 5rem 0;
+    position: relative;
+    overflow: visible;
+    margin-bottom: 60px;
+}
+
+.why-choose-connector {
+    position: absolute;
+    top: -80px;
+    left: 40px;
+    width: 5px;
+    height: 120px;
+    background-color: var(--yellow);
+}
+
+.why-choose-connector::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 40px;
+    background-color: var(--yellow);
+    border-radius: 50%;
+    transform: translate(-50%, 50%);
+}
+
+.why-choose h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.why-choose .highlight {
+    color: var(--yellow);
+}
+
+.why-points {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.point {
+    display: flex;
+    gap: 1rem;
+    align-items: start;
+}
+
+.point-icon {
+    width: 40px;
+    height: 40px;
+    background-color: var(--yellow);
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 5px;
+}
+
+.point p {
+    line-height: 1.8;
+}
+
+.why-details {
+    max-width: 800px;
+    margin: 3rem auto;
+}
+
+.why-details p {
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+    text-align: center;
+}
+
+.why-footer {
+    max-width: 900px;
+    margin: 3rem auto 0;
+    padding-top: 3rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.why-footer p {
+    line-height: 1.8;
+    text-align: center;
+}
+
+.why-connector-bottom {
+    position: absolute;
+    bottom: -80px;
+    right: 40px;
+    width: 5px;
+    height: 120px;
+    background-color: var(--yellow);
+}
+
+.why-connector-bottom::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    background-color: var(--yellow);
+    border-radius: 50%;
+    transform: translate(50%, -50%);
+}
+
+/* Oferta Section */
+.oferta {
+    background-color: var(--white);
+    padding: 5rem 0;
+    position: relative;
+    margin-bottom: 60px;
+}
+
+.oferta h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    text-transform: uppercase;
+    margin-bottom: 3rem;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.yellow-line {
+    flex: 1;
+    height: 4px;
+    background-color: var(--yellow);
+}
+
+.oferta-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: 3rem;
+    margin-bottom: 3rem;
+}
+
+.oferta-item h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: var(--text-dark);
+}
+
+.oferta-item ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.oferta-item ul li {
+    padding: 0.75rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    color: var(--text-dark);
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.oferta-item ul li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 8px;
+    height: 8px;
+    background-color: var(--yellow);
+    border-radius: 50%;
+}
+
+.oferta-graphic {
+    margin-top: 4rem;
+    height: 150px;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.graphic-bars {
+    display: flex;
+    gap: 0.5rem;
+    align-items: flex-end;
+    height: 100%;
+}
+
+.graphic-bars::before,
+.graphic-bars::after {
+    content: '';
+    width: 20px;
+    background-color: var(--yellow);
+}
+
+.graphic-bars::before {
+    height: 100%;
+}
+
+.graphic-bars::after {
+    height: 100%;
+}
+
+/* Referencje Section */
+.referencje {
+    background-color: var(--light-gray);
+    padding: 5rem 0;
+    position: relative;
+    margin-bottom: 60px;
+}
+
+.referencje h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.referencje-intro {
+    max-width: 900px;
+    margin: 0 auto 3rem;
+    text-align: center;
+    line-height: 1.8;
+    color: var(--text-dark);
+}
+
+.referencje-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+}
+
+.ref-card {
+    background-color: var(--dark-gray);
+    color: var(--white);
+    padding: 2.5rem;
+    border-radius: 8px;
+}
+
+.ref-card h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+.ref-card p {
+    line-height: 1.8;
+}
+
+/* Contact Footer Section */
+.contact-footer {
+    background-color: var(--dark-gray);
+    color: var(--white);
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.contact-info-footer h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    color: var(--yellow);
+}
+
+.phone {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+}
+
+.address p {
+    margin: 0.5rem 0;
+    font-size: 1rem;
+}
+
+/* Footer */
+.footer {
+    background-color: var(--text-dark);
+    color: rgba(255, 255, 255, 0.6);
+    padding: 2rem 0;
+    text-align: center;
+}
+
+.footer p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+/* Section Visibility */
+section {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.hero {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* LAD (Ladder Logic Diagram) Transition Elements */
+.lad-transition {
+    position: relative;
+    width: 100%;
+    height: 120px;
+    margin: 0;
+    overflow: visible;
+}
+
+.lad-transition.bottom {
+    position: absolute;
+    bottom: -60px;
+    left: 0;
+    right: 0;
+    z-index: 10;
+}
+
+.lad-rail {
+    position: absolute;
+    width: 5px;
+    height: 100%;
+    background-color: var(--yellow);
+    top: 0;
+}
+
+.lad-rail.left {
+    left: 10%;
+}
+
+.lad-rail.right {
+    right: 10%;
+}
+
+.lad-rung {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    right: 10%;
+    height: 4px;
+    background-color: var(--yellow);
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0 20px;
+}
+
+/* LAD Contact (Normally Open) - looks like | | */
+.lad-contact {
+    width: 30px;
+    height: 50px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+}
+
+.lad-contact::before,
+.lad-contact::after {
+    content: '';
+    width: 4px;
+    height: 100%;
+    background-color: var(--yellow);
+}
+
+/* LAD Contact (Normally Closed) - looks like | / | */
+.lad-contact.normally-closed::before {
+    position: relative;
+}
+
+.lad-contact.normally-closed::after {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 4px;
+    background-color: var(--yellow);
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%) rotate(-45deg);
+}
+
+/* LAD Coil (Output) - looks like ( ) */
+.lad-coil {
+    width: 40px;
+    height: 50px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lad-coil::before,
+.lad-coil::after {
+    content: '';
+    width: 15px;
+    height: 40px;
+    border: 4px solid var(--yellow);
+    border-radius: 50%;
+}
+
+.lad-coil::before {
+    border-right: none;
+    margin-right: -4px;
+}
+
+.lad-coil::after {
+    border-left: none;
+    margin-left: -4px;
+}
+
+.lad-coil.output::before {
+    content: '';
+    position: absolute;
+    width: 4px;
+    height: 30px;
+    background-color: var(--yellow);
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* LAD Node (Connection Point) */
+.lad-node {
+    width: 12px;
+    height: 12px;
+    background-color: var(--yellow);
+    border-radius: 50%;
+    position: relative;
+}
+
+/* LAD Timer Symbol */
+.lad-timer {
+    width: 50px;
+    height: 50px;
+    border: 4px solid var(--yellow);
+    border-radius: 4px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lad-timer::before {
+    content: 'TON';
+    color: var(--yellow);
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* LAD Parallel Branches */
+.lad-transition.complex .lad-rung {
+    display: grid;
+    grid-template-columns: auto auto 1fr auto auto;
+    gap: 20px;
+}
+
+.lad-parallel-start,
+.lad-parallel-end {
+    width: 4px;
+    height: 80px;
+    background-color: var(--yellow);
+    position: relative;
+}
+
+.lad-branch {
+    position: absolute;
+    height: 4px;
+    background-color: var(--yellow);
+    left: 0;
+    right: 0;
+}
+
+.lad-branch:first-of-type {
+    top: 20%;
+}
+
+.lad-branch:last-of-type {
+    top: 80%;
+}
+
+/* Process Automation Symbols Transition */
+.process-symbols-transition {
+    position: relative;
+    width: 100%;
+    height: 100px;
+    margin: 3rem 0;
+}
+
+.process-line {
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    right: 5%;
+    height: 5px;
+    background-color: var(--yellow);
+    transform: translateY(-50%);
+}
+
+.process-symbols {
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    right: 5%;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+/* Valve Symbol */
+.process-symbol.valve {
+    width: 0;
+    height: 0;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    border-bottom: 40px solid var(--yellow);
+    position: relative;
+}
+
+.process-symbol.valve::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    border-top: 40px solid var(--yellow);
+    bottom: -40px;
+    left: -25px;
+}
+
+/* Pump Symbol */
+.process-symbol.pump {
+    width: 50px;
+    height: 50px;
+    border: 5px solid var(--yellow);
+    border-radius: 50%;
+    position: relative;
+}
+
+.process-symbol.pump::before {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 5px;
+    background-color: var(--yellow);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.process-symbol.pump::after {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 5px;
+    background-color: var(--yellow);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+/* Sensor Symbol */
+.process-symbol.sensor {
+    width: 40px;
+    height: 50px;
+    border: 5px solid var(--yellow);
+    border-radius: 20px 20px 0 0;
+    border-bottom: none;
+    position: relative;
+}
+
+.process-symbol.sensor::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: var(--yellow);
+    border-radius: 50%;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Motor Symbol */
+.process-symbol.motor {
+    width: 50px;
+    height: 50px;
+    border: 5px solid var(--yellow);
+    border-radius: 50%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.process-symbol.motor::before {
+    content: 'M';
+    color: var(--yellow);
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* PID Symbols Transition */
+.pid-symbols-transition {
+    position: relative;
+    width: 100%;
+    height: 100px;
+    margin: 3rem 0;
+}
+
+.pid-line {
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    right: 5%;
+    height: 5px;
+    background-color: var(--yellow);
+    transform: translateY(-50%);
+}
+
+.pid-symbols {
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    right: 5%;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+/* Flow Transmitter (FT) */
+.pid-symbol.flow-transmitter {
+    width: 50px;
+    height: 50px;
+    border: 5px solid var(--yellow);
+    border-radius: 50%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pid-symbol.flow-transmitter::before {
+    content: 'FT';
+    color: var(--yellow);
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* Pressure Gauge (PT) */
+.pid-symbol.pressure-gauge {
+    width: 50px;
+    height: 50px;
+    border: 5px solid var(--yellow);
+    border-radius: 50%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pid-symbol.pressure-gauge::before {
+    content: 'PT';
+    color: var(--yellow);
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* Level Indicator (LT) */
+.pid-symbol.level-indicator {
+    width: 40px;
+    height: 50px;
+    border: 5px solid var(--yellow);
+    border-radius: 4px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pid-symbol.level-indicator::before {
+    content: 'LT';
+    color: var(--yellow);
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.pid-symbol.level-indicator::after {
+    content: '';
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+    right: 5px;
+    height: 15px;
+    background-color: var(--yellow);
+    opacity: 0.3;
+}
+
+/* Temperature Sensor (TT) */
+.pid-symbol.temperature-sensor {
+    width: 50px;
+    height: 50px;
+    border: 5px solid var(--yellow);
+    border-radius: 50%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pid-symbol.temperature-sensor::before {
+    content: 'TT';
+    color: var(--yellow);
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* Responsive Design */
+@media (max-width: 968px) {
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        flex-direction: column;
+        background-color: var(--white);
+        width: 100%;
+        text-align: center;
+        transition: left 0.3s ease;
+        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+        padding: 2rem 0;
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .hamburger.active span:nth-child(1) {
+        transform: rotate(45deg) translate(8px, 8px);
+    }
+
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(8px, -8px);
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .service-box {
+        grid-template-columns: 40px 1fr;
+        gap: 1rem;
+    }
+    
+    .service-connector-circle {
+        display: none;
+    }
+
+    .oferta-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .referencje-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .why-points {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Simplify LAD elements on mobile */
+    .lad-rail.left {
+        left: 5%;
+    }
+    
+    .lad-rail.right {
+        right: 5%;
+    }
+    
+    .lad-rung {
+        left: 5%;
+        right: 5%;
+    }
+    
+    .lad-contact,
+    .lad-coil,
+    .lad-timer {
+        transform: scale(0.7);
+    }
+    
+    .process-symbols .process-symbol,
+    .pid-symbols .pid-symbol {
+        transform: scale(0.7);
+    }
+}
+
+@media (max-width: 640px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .hero {
+        min-height: 500px;
+    }
+
+    section {
+        padding: 3rem 0 !important;
+    }
+
+    .innovation h2,
+    .why-choose h2,
+    .oferta h2,
+    .referencje h2 {
+        font-size: 2rem;
+    }
+    
+    /* Further simplify LAD elements on small mobile */
+    .lad-transition {
+        height: 80px;
+    }
+    
+    .lad-contact,
+    .lad-coil,
+    .lad-timer,
+    .lad-node {
+        transform: scale(0.5);
+    }
+    
+    .process-symbols,
+    .pid-symbols {
+        gap: 10px;
+    }
+}
+
+/* ============================================
+   VARIATION 2: P&ID (PIPING & INSTRUMENTATION DIAGRAM) STYLE
+   ============================================ */
+
+/* P&ID Transition Base */
+.pid-transition {
+    position: relative;
+    width: 100%;
+    height: 120px;
+    margin: 0;
+    overflow: visible;
+}
+
+.pid-transition.bottom {
+    position: absolute;
+    bottom: -60px;
+    left: 0;
+    right: 0;
+    z-index: 10;
+}
+
+/* Pipeline (Main Process Lines) */
+.pipeline {
+    position: absolute;
+    background-color: var(--yellow);
+}
+
+.pipeline.left {
+    left: 10%;
+    width: 6px;
+    height: 100%;
+    top: 0;
+}
+
+.pipeline.right {
+    right: 10%;
+    width: 6px;
+    height: 100%;
+    top: 0;
+}
+
+.pipe-horizontal {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    right: 10%;
+    height: 6px;
+    background-color: var(--yellow);
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0 20px;
+}
+
+/* Control Valve Symbol */
+.control-valve {
+    width: 50px;
+    height: 50px;
+    position: relative;
+}
+
+.control-valve::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    border-bottom: 40px solid var(--yellow);
+    left: 0;
+}
+
+.control-valve::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    border-top: 40px solid var(--yellow);
+    bottom: 0;
+}
+
+.control-valve.normally-closed::before {
+    border-bottom-color: rgba(255, 215, 0, 0.5);
+}
+
+/* Actuator Symbol (Similar to coil but with stem) */
+.actuator {
+    width: 50px;
+    height: 60px;
+    position: relative;
+}
+
+.actuator::before {
+    content: '';
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border: 5px solid var(--yellow);
+    border-radius: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.actuator::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    height: 20px;
+    background-color: var(--yellow);
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.actuator.output::before {
+    background-color: rgba(255, 215, 0, 0.2);
+}
+
+/* Pipe Joint / Connection Point */
+.pipe-joint {
+    width: 16px;
+    height: 16px;
+    background-color: var(--yellow);
+    border-radius: 50%;
+    border: 3px solid rgba(255, 215, 0, 0.5);
+    position: relative;
+}
+
+/* Controller / Instrument Box */
+.controller {
+    width: 55px;
+    height: 55px;
+    border: 5px solid var(--yellow);
+    border-radius: 50%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 215, 0, 0.1);
+}
+
+.controller::before {
+    content: 'PID';
+    color: var(--yellow);
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* Pipe Tee Junction */
+.pipe-tee,
+.pipe-merge {
+    width: 6px;
+    height: 80px;
+    background-color: var(--yellow);
+    position: relative;
+}
+
+.pipe-branch {
+    position: absolute;
+    height: 6px;
+    background-color: var(--yellow);
+    left: 0;
+    right: 0;
+}
+
+.pipe-branch:first-of-type {
+    top: 20%;
+}
+
+.pipe-branch:last-of-type {
+    top: 80%;
+}
+
+/* Heat Exchanger Symbol */
+.heat-exchanger {
+    width: 60px;
+    height: 50px;
+    position: relative;
+}
+
+.heat-exchanger::before {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border: 5px solid var(--yellow);
+    border-radius: 50%;
+}
+
+.heat-exchanger::after {
+    content: '';
+    position: absolute;
+    width: 40px;
+    height: 6px;
+    background-color: var(--yellow);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Tank / Vessel Symbol */
+.tank {
+    width: 60px;
+    height: 60px;
+    border: 5px solid var(--yellow);
+    border-radius: 50% 50% 0 0;
+    position: relative;
+    background-color: rgba(255, 215, 0, 0.1);
+}
+
+.tank::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background-color: var(--yellow);
+}
+
+/* Pump Symbol (Enhanced) */
+.pump-symbol {
+    width: 55px;
+    height: 55px;
+    border: 5px solid var(--yellow);
+    border-radius: 50%;
+    position: relative;
+    background-color: rgba(255, 215, 0, 0.05);
+}
+
+.pump-symbol::before {
+    content: 'P';
+    position: absolute;
+    color: var(--yellow);
+    font-size: 24px;
+    font-weight: bold;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.pump-symbol::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 15px solid var(--yellow);
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Compressor Symbol */
+.compressor {
+    width: 60px;
+    height: 50px;
+    position: relative;
+}
+
+.compressor::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    border-bottom: 50px solid var(--yellow);
+}
+
+.compressor::after {
+    content: 'C';
+    position: absolute;
+    color: var(--yellow);
+    font-size: 18px;
+    font-weight: bold;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Filter Symbol */
+.filter {
+    width: 50px;
+    height: 50px;
+    position: relative;
+}
+
+.filter::before {
+    content: '';
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border: 5px solid var(--yellow);
+    border-radius: 50%;
+}
+
+.filter::after {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 6px;
+    background-color: var(--yellow);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+/* Reducer / Expander */
+.reducer {
+    width: 60px;
+    height: 40px;
+    position: relative;
+}
+
+.reducer::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    border-left: 60px solid var(--yellow);
+}
+
+/* Safety Valve */
+.safety-valve {
+    width: 50px;
+    height: 55px;
+    position: relative;
+}
+
+.safety-valve::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    border-bottom: 40px solid var(--yellow);
+}
+
+.safety-valve::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    height: 20px;
+    background-color: var(--yellow);
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Flow Direction Arrow */
+.flow-arrow {
+    width: 40px;
+    height: 30px;
+    position: relative;
+}
+
+.flow-arrow::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-left: 30px solid var(--yellow);
+    right: 0;
+}
+
+/* Three-Way Valve */
+.three-way-valve {
+    width: 50px;
+    height: 50px;
+    position: relative;
+}
+
+.three-way-valve::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    border-bottom: 40px solid var(--yellow);
+}
+
+.three-way-valve::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    height: 20px;
+    background-color: var(--yellow);
+    bottom: 10px;
+    right: -15px;
+    transform: rotate(45deg);
+}
+
+/* Complex P&ID Transition */
+.pid-transition.complex .pipe-horizontal {
+    display: grid;
+    grid-template-columns: auto auto 1fr auto auto;
+    gap: 20px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 968px) {
+    .pipeline.left {
+        left: 5%;
+    }
+    
+    .pipeline.right {
+        right: 5%;
+    }
+    
+    .pipe-horizontal {
+        left: 5%;
+        right: 5%;
+    }
+    
+    .control-valve,
+    .actuator,
+    .controller {
+        transform: scale(0.7);
+    }
+}
+
+@media (max-width: 640px) {
+    .pid-transition {
+        height: 80px;
+    }
+    
+    .control-valve,
+    .actuator,
+    .controller,
+    .pipe-joint {
+        transform: scale(0.5);
+    }
+    
+    .pipe-branch {
+        display: none;
+    }
+}
