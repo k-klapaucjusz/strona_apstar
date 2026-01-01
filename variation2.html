@@ -6,8 +6,8 @@
     <meta name="description" content="Apstar - profesjonalne rozwiązania w automatyce przemysłowej. Programowanie PLC, systemy SCADA/HMI, modernizacje linii produkcyjnych, sieci przemysłowe Profinet, Profibus.">
     <meta name="keywords" content="automatyka przemysłowa, PLC, SCADA, HMI, Siemens, Schneider Electric, OPC UA, Profinet, Profibus, modernizacje, sterowanie">
     <meta name="author" content="Apstar">
-    <title>Apstar - Automatyka Przemysłowa | PLC, SCADA, HMI</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Apstar - Automatyka Przemysłowa | Wariant 2: P&ID</title>
+    <link rel="stylesheet" href="style-variation2.css">
 </head>
 <body>
     <!-- Navigation -->
@@ -42,14 +42,14 @@
                 </div>
             </div>
         </div>
-        <!-- LAD Transition Element -->
-        <div class="lad-transition bottom">
-            <div class="lad-rail left"></div>
-            <div class="lad-rail right"></div>
-            <div class="lad-rung">
-                <div class="lad-contact"></div>
-                <div class="lad-contact"></div>
-                <div class="lad-coil"></div>
+        <!-- P&ID Transition Element -->
+        <div class="pid-transition bottom">
+            <div class="pipeline left"></div>
+            <div class="pipeline right"></div>
+            <div class="pipe-horizontal">
+                <div class="control-valve"></div>
+                <div class="control-valve"></div>
+                <div class="actuator"></div>
             </div>
         </div>
     </section>
@@ -59,16 +59,16 @@
         <div class="container">
             <p>Nasza działalność jest wspierana przez partnerstwa ze wiodącymi automatycznymi i kontrolowanymi nowymi oraz mediami technicznymi i wyposażeniem.</p>
         </div>
-        <!-- LAD Transition Element -->
-        <div class="lad-transition bottom">
-            <div class="lad-rail left"></div>
-            <div class="lad-rail right"></div>
-            <div class="lad-rung">
-                <div class="lad-node"></div>
-                <div class="lad-contact normally-closed"></div>
-                <div class="lad-node"></div>
-                <div class="lad-contact"></div>
-                <div class="lad-node"></div>
+        <!-- P&ID Transition Element -->
+        <div class="pid-transition bottom">
+            <div class="pipeline left"></div>
+            <div class="pipeline right"></div>
+            <div class="pipe-horizontal">
+                <div class="pipe-joint"></div>
+                <div class="control-valve normally-closed"></div>
+                <div class="pipe-joint"></div>
+                <div class="control-valve"></div>
+                <div class="pipe-joint"></div>
             </div>
         </div>
     </section>
@@ -76,55 +76,53 @@
     <!-- Services Section -->
     <section id="services" class="services-boxes">
         <div class="container">
-            <div class="services-grid">
-                <div class="service-item">
-                    <div class="service-left">
-                        <div class="service-connector"></div>
-                        <h3 class="service-title">AUTOMATYKA<br>PROCESOWA</h3>
-                    </div>
-                    <div class="service-right">
+            <div class="service-box">
+                <div class="service-connector left"></div>
+                <div class="service-content">
+                    <h3>AUTOMATYKA PROCESOWA</h3>
+                    <div class="service-image">
                         <img src="zdjecia/iStock-166764970.jpg" alt="Automatyka Procesowa">
                     </div>
                 </div>
-                
-                <div class="service-item">
-                    <div class="service-left">
-                        <div class="service-connector"></div>
-                        <h3 class="service-title">AUTOMATYKA<br>PRODUKCJI</h3>
-                    </div>
-                    <div class="service-right">
+            </div>
+            
+            <div class="service-box">
+                <div class="service-connector left"></div>
+                <div class="service-content">
+                    <h3>AUTOMATYKA PRODUKCJI</h3>
+                    <div class="service-image">
                         <img src="zdjecia/iStock-616899444.jpg" alt="Automatyka Produkcji">
                     </div>
                 </div>
-                
-                <div class="service-item last">
-                    <div class="service-left">
-                        <div class="service-connector short"></div>
-                        <h3 class="service-title">SERWIS<br>MASZYN</h3>
-                    </div>
-                    <div class="service-right">
+            </div>
+            
+            <div class="service-box">
+                <div class="service-connector left"></div>
+                <div class="service-content">
+                    <h3>SERWIS MASZYN</h3>
+                    <div class="service-image">
                         <img src="zdjecia/iStock-1054157972.jpg" alt="Serwis Maszyn">
                     </div>
-                    <div class="service-end-circle"></div>
                 </div>
+                <div class="service-connector-circle right"></div>
             </div>
         </div>
-        <!-- LAD Transition with Parallel Branches -->
-        <div class="lad-transition bottom complex">
-            <div class="lad-rail left"></div>
-            <div class="lad-rail right"></div>
-            <div class="lad-rung">
-                <div class="lad-node"></div>
-                <div class="lad-parallel-start"></div>
-                <div class="lad-branch">
-                    <div class="lad-contact"></div>
+        <!-- P&ID Transition with Parallel Branches -->
+        <div class="pid-transition bottom complex">
+            <div class="pipeline left"></div>
+            <div class="pipeline right"></div>
+            <div class="pipe-horizontal">
+                <div class="pipe-joint"></div>
+                <div class="pipe-tee"></div>
+                <div class="pipe-branch">
+                    <div class="control-valve"></div>
                 </div>
-                <div class="lad-branch">
-                    <div class="lad-contact normally-closed"></div>
+                <div class="pipe-branch">
+                    <div class="control-valve normally-closed"></div>
                 </div>
-                <div class="lad-parallel-end"></div>
-                <div class="lad-coil"></div>
-                <div class="lad-node"></div>
+                <div class="pipe-merge"></div>
+                <div class="actuator"></div>
+                <div class="pipe-joint"></div>
             </div>
         </div>
     </section>
@@ -188,16 +186,16 @@
             </div>
             <div class="why-connector-bottom"></div>
         </div>
-        <!-- LAD Transition with Timer -->
-        <div class="lad-transition bottom">
-            <div class="lad-rail left"></div>
-            <div class="lad-rail right"></div>
-            <div class="lad-rung">
-                <div class="lad-node"></div>
-                <div class="lad-contact"></div>
-                <div class="lad-timer"></div>
-                <div class="lad-contact"></div>
-                <div class="lad-node"></div>
+        <!-- P&ID Transition with Timer -->
+        <div class="pid-transition bottom">
+            <div class="pipeline left"></div>
+            <div class="pipeline right"></div>
+            <div class="pipe-horizontal">
+                <div class="pipe-joint"></div>
+                <div class="control-valve"></div>
+                <div class="controller"></div>
+                <div class="control-valve"></div>
+                <div class="pipe-joint"></div>
             </div>
         </div>
     </section>
@@ -269,15 +267,15 @@
             </div>
         </div>
         <!-- LAD Final Transition -->
-        <div class="lad-transition bottom">
-            <div class="lad-rail left"></div>
-            <div class="lad-rail right"></div>
-            <div class="lad-rung">
-                <div class="lad-node"></div>
-                <div class="lad-contact"></div>
-                <div class="lad-contact"></div>
-                <div class="lad-coil output"></div>
-                <div class="lad-node"></div>
+        <div class="pid-transition bottom">
+            <div class="pipeline left"></div>
+            <div class="pipeline right"></div>
+            <div class="pipe-horizontal">
+                <div class="pipe-joint"></div>
+                <div class="control-valve"></div>
+                <div class="control-valve"></div>
+                <div class="actuator output"></div>
+                <div class="pipe-joint"></div>
             </div>
         </div>
     </section>

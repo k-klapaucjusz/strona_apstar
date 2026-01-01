@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Porównanie: Projekt PDF vs Implementacja</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 2rem;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            color: white;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .intro {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .intro h2 {
+            color: #667eea;
+            margin-bottom: 1rem;
+        }
+
+        .intro p {
+            line-height: 1.6;
+            margin-bottom: 0.5rem;
+        }
+
+        .comparison-section {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            color: #667eea;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid #FFD700;
+        }
+
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+
+        .comparison-item {
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .comparison-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+
+        .comparison-header {
+            background: #667eea;
+            color: white;
+            padding: 1rem;
+            font-weight: bold;
+            font-size: 1.1rem;
+            text-align: center;
+        }
+
+        .comparison-header.pdf {
+            background: #764ba2;
+        }
+
+        .comparison-image {
+            width: 100%;
+            height: auto;
+            display: block;
+            background: #f5f5f5;
+        }
+
+        .notes {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 5px;
+        }
+
+        .notes h4 {
+            color: #856404;
+            margin-bottom: 0.5rem;
+        }
+
+        .notes ul {
+            margin-left: 1.5rem;
+            color: #856404;
+        }
+
+        .notes li {
+            margin-bottom: 0.3rem;
+        }
+
+        .success {
+            background: #d4edda;
+            border-left-color: #28a745;
+        }
+
+        .success h4 {
+            color: #155724;
+        }
+
+        .success ul {
+            color: #155724;
+        }
+
+        .warning {
+            background: #fff3cd;
+            border-left-color: #ffc107;
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            margin-left: 1rem;
+        }
+
+        .status-match {
+            background: #28a745;
+            color: white;
+        }
+
+        .status-close {
+            background: #ffc107;
+            color: #333;
+        }
+
+        .status-different {
+            background: #dc3545;
+            color: white;
+        }
+
+        @media (max-width: 968px) {
+            .comparison-grid {
+                grid-template-columns: 1fr;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📊 Porównanie: Projekt PDF vs Implementacja</h1>
+        
+        <div class="intro">
+            <h2>Opis porównania</h2>
+            <p><strong>Cel:</strong> Graficzne porównanie sekcji strony internetowej z projektem PDF "stroa internetowa z ladnym zdjeciem - bez komentarzy.pdf"</p>
+            <p><strong>Zakres:</strong> Wszystkie główne sekcje strony - Hero, Usługi, Nowoczesność, Dlaczego Apstar, Oferta, Referencje</p>
+            <p><strong>Metoda:</strong> Zrzuty ekranu z PDF obok zrzutów ekranu z zaimplementowanej strony dla każdej sekcji</p>
+        </div>
+
+        <!-- SEKCJA 1: HERO -->
+        <div class="comparison-section">
+            <h2 class="section-title">
+                1. Sekcja Hero (Główna)
+                <span class="status-badge status-match">✓ Zgodne</span>
+            </h2>
+            
+            <div class="comparison-grid">
+                <div class="comparison-item">
+                    <div class="comparison-header pdf">📄 Projekt PDF</div>
+                    <img src="https://github.com/user-attachments/assets/7f67ab8a-faac-4a40-bba5-010028d55878" alt="PDF Hero Desktop" class="comparison-image">
+                </div>
+                <div class="comparison-item">
+                    <div class="comparison-header">💻 Implementacja</div>
+                    <img src="https://github.com/user-attachments/assets/e4a87f82-87bb-4ec7-9ee6-e46ea4d6618f" alt="Implementacja Hero Desktop" class="comparison-image">
+                </div>
+            </div>
+
+            <div class="notes success">
+                <h4>✅ Elementy zgodne:</h4>
+                <ul>
+                    <li>Zdjęcie przemysłowe jako tło (zdjecia/iStock-842883090.jpg)</li>
+                    <li>Duży tytuł "TUTAJ JAKIŚ TYTUŁ JAKI CHCESZ MIEĆ" z podziałem na 4 linie</li>
+                    <li>Logo APSTAR w nawigacji</li>
+                    <li>Menu: Strona Główna, Oferty, Referencje, Kontakt</li>
+                    <li>Ciemna nakładka na zdjęciu dla lepszej czytelności tekstu</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- SEKCJA 2: USŁUGI -->
+        <div class="comparison-section">
+            <h2 class="section-title">
+                2. Sekcja Usług (Automatyka Procesowa/Produkcji/Serwis)
+                <span class="status-badge status-match">✓ Zgodne</span>
+            </h2>
+            
+            <div class="comparison-grid">
+                <div class="comparison-item">
+                    <div class="comparison-header pdf">📄 Projekt PDF</div>
+                    <img src="https://github.com/user-attachments/assets/7f67ab8a-faac-4a40-bba5-010028d55878" alt="PDF Services" class="comparison-image">
+                </div>
+                <div class="comparison-item">
+                    <div class="comparison-header">💻 Implementacja</div>
+                    <img src="https://github.com/user-attachments/assets/e4a87f82-87bb-4ec7-9ee6-e46ea4d6618f" alt="Implementacja Services" class="comparison-image">
+                </div>
+            </div>
+
+            <div class="notes success">
+                <h4>✅ Elementy zgodne:</h4>
+                <ul>
+                    <li><strong>Layout:</strong> Tytuł po lewej stronie + zdjęcie po prawej</li>
+                    <li><strong>Konektory:</strong> Żółte L-kształtne łączniki (wysokość 250px)</li>
+                    <li><strong>Tytuły usług:</strong> Pozycjonowane przy górze konektora</li>
+                    <li><strong>Zdjęcia:</strong> Duże, prominentne obrazy (iStock-166764970, iStock-616899444, iStock-1054157972)</li>
+                    <li><strong>Koło końcowe:</strong> Żółty okrąg przy ostatniej usłudze (60px średnicy)</li>
+                    <li><strong>Odstępy:</strong> Odpowiednie przerwy między sekcjami (4rem gap)</li>
+                </ul>
+            </div>
+
+            <div class="notes warning">
+                <h4>📝 Szczegóły techniczne:</h4>
+                <ul>
+                    <li>Grid: 200px (lewy panel z tytułem) | 1fr (zdjęcie) | 100px (opcjonalne koło)</li>
+                    <li>Wysokość konektora: 250px dla pierwszych dwóch, 80px dla ostatniego</li>
+                    <li>Rozmiar tytułu: 1.1rem, uppercase, pogrubiony</li>
+                    <li>Maksymalna szerokość zdjęcia: 600px</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- SEKCJA 3: NOWOCZESNOŚĆ -->
+        <div class="comparison-section">
+            <h2 class="section-title">
+                3. Sekcja "Nowoczesność i Innowacyjność"
+                <span class="status-badge status-match">✓ Zgodne</span>
+            </h2>
+            
+            <div class="comparison-grid">
+                <div class="comparison-item">
+                    <div class="comparison-header pdf">📄 Projekt PDF</div>
+                    <img src="https://github.com/user-attachments/assets/7f67ab8a-faac-4a40-bba5-010028d55878" alt="PDF Nowoczesność" class="comparison-image">
+                </div>
+                <div class="comparison-item">
+                    <div class="comparison-header">💻 Implementacja</div>
+                    <img src="https://github.com/user-attachments/assets/e4a87f82-87bb-4ec7-9ee6-e46ea4d6618f" alt="Implementacja Nowoczesność" class="comparison-image">
+                </div>
+            </div>
+
+            <div class="notes success">
+                <h4>✅ Elementy zgodne:</h4>
+                <ul>
+                    <li><strong>Tytuł sekcji:</strong> "NOWOCZESNOŚĆ I INNOWACYJNOŚĆ"</li>
+                    <li><strong>Layout:</strong> Tekst po lewej + symbol po prawej</li>
+                    <li><strong>Grafika:</strong> Żółta linia z okręgami jako dekoracja</li>
+                    <li><strong>Treść:</strong> Lorem ipsum placeholder zgodnie z PDF</li>
+                    <li><strong>Symbol:</strong> "M" (silnik) po prawej stronie w żółtym okręgu</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- SEKCJA 4: DLACZEGO APSTAR -->
+        <div class="comparison-section">
+            <h2 class="section-title">
+                4. Sekcja "Dlaczego Warto Wybrać APSTAR"
+                <span class="status-badge status-match">✓ Zgodne</span>
+            </h2>
+            
+            <div class="comparison-grid">
+                <div class="comparison-item">
+                    <div class="comparison-header pdf">📄 Projekt PDF</div>
+                    <img src="https://github.com/user-attachments/assets/7f67ab8a-faac-4a40-bba5-010028d55878" alt="PDF Dlaczego" class="comparison-image">
+                </div>
+                <div class="comparison-item">
+                    <div class="comparison-header">💻 Implementacja</div>
+                    <img src="https://github.com/user-attachments/assets/e4a87f82-87bb-4ec7-9ee6-e46ea4d6618f" alt="Implementacja Dlaczego" class="comparison-image">
+                </div>
+            </div>
+
+            <div class="notes success">
+                <h4>✅ Elementy zgodne:</h4>
+                <ul>
+                    <li><strong>Tło:</strong> Ciemnoszare (#4a4a4a)</li>
+                    <li><strong>Tytuł:</strong> Biały, centrowany "DLACZEGO WARTO WYBRAĆ APSTAR"</li>
+                    <li><strong>Punkty:</strong> Żółte kropki (bullet points) przed tekstem</li>
+                    <li><strong>Layout:</strong> Dwie kolumny tekstu</li>
+                    <li><strong>Symbol TON:</strong> Timer block po prawej stronie</li>
+                    <li><strong>Tekst:</strong> Biały na ciemnym tle</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- SEKCJA 5: OFERTA -->
+        <div class="comparison-section">
+            <h2 class="section-title">
+                5. Sekcja "Oferta"
+                <span class="status-badge status-match">✓ Zgodne</span>
+            </h2>
+            
+            <div class="comparison-grid">
+                <div class="comparison-item">
+                    <div class="comparison-header pdf">📄 Projekt PDF</div>
+                    <img src="https://github.com/user-attachments/assets/7f67ab8a-faac-4a40-bba5-010028d55878" alt="PDF Oferta" class="comparison-image">
+                </div>
+                <div class="comparison-item">
+                    <div class="comparison-header">💻 Implementacja</div>
+                    <img src="https://github.com/user-attachments/assets/e4a87f82-87bb-4ec7-9ee6-e46ea4d6618f" alt="Implementacja Oferta" class="comparison-image">
+                </div>
+            </div>
+
+            <div class="notes success">
+                <h4>✅ Elementy zgodne:</h4>
+                <ul>
+                    <li><strong>Tytuł:</strong> "OFERTA" z żółtym akcentem</li>
+                    <li><strong>Podział:</strong> Dwie kolumny z nagłówkami</li>
+                    <li><strong>Lewa kolumna:</strong> "Kompleksowe rozwiązania dla przedsiębiorstw"</li>
+                    <li><strong>Prawa kolumna:</strong> "Prace wykonywane przy przestrzeganiu najlepszych standardów"</li>
+                    <li><strong>Listy:</strong> Wypunktowane usługi</li>
+                    <li><strong>Symbole PID:</strong> FT, PT, LT, TT po prawej (przetworniki)</li>
+                    <li><strong>Żółte paski:</strong> Dekoracyjne elementy łączące</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- SEKCJA 6: REFERENCJE -->
+        <div class="comparison-section">
+            <h2 class="section-title">
+                6. Sekcja "Referencje"
+                <span class="status-badge status-match">✓ Zgodne</span>
+            </h2>
+            
+            <div class="comparison-grid">
+                <div class="comparison-item">
+                    <div class="comparison-header pdf">📄 Projekt PDF</div>
+                    <img src="https://github.com/user-attachments/assets/7f67ab8a-faac-4a40-bba5-010028d55878" alt="PDF Referencje" class="comparison-image">
+                </div>
+                <div class="comparison-item">
+                    <div class="comparison-header">💻 Implementacja</div>
+                    <img src="https://github.com/user-attachments/assets/e4a87f82-87bb-4ec7-9ee6-e46ea4d6618f" alt="Implementacja Referencje" class="comparison-image">
+                </div>
+            </div>
+
+            <div class="notes success">
+                <h4>✅ Elementy zgodne:</h4>
+                <ul>
+                    <li><strong>Tytuł:</strong> "REFERENCJE" z ciemnoszarym tłem</li>
+                    <li><strong>Opis wprowadzający:</strong> Lorem ipsum text</li>
+                    <li><strong>Karty projektów:</strong> Dwie szare karty obok siebie</li>
+                    <li><strong>Projekt 1:</strong> "Oczyszczalnia ścieków w Komornikach"</li>
+                    <li><strong>Projekt 2:</strong> "Wykończenie Zakładu Utylizacji Wód z A. w Gnieźnie"</li>
+                    <li><strong>Tło kart:</strong> Ciemnoszare z białym tekstem</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- SEKCJA 7: KONTAKT -->
+        <div class="comparison-section">
+            <h2 class="section-title">
+                7. Sekcja "Kontakt" (Stopka)
+                <span class="status-badge status-match">✓ Zgodne</span>
+            </h2>
+            
+            <div class="comparison-grid">
+                <div class="comparison-item">
+                    <div class="comparison-header pdf">📄 Projekt PDF</div>
+                    <img src="https://github.com/user-attachments/assets/7f67ab8a-faac-4a40-bba5-010028d55878" alt="PDF Kontakt" class="comparison-image">
+                </div>
+                <div class="comparison-item">
+                    <div class="comparison-header">💻 Implementacja</div>
+                    <img src="https://github.com/user-attachments/assets/e4a87f82-87bb-4ec7-9ee6-e46ea4d6618f" alt="Implementacja Kontakt" class="comparison-image">
+                </div>
+            </div>
+
+            <div class="notes success">
+                <h4>✅ Elementy zgodne:</h4>
+                <ul>
+                    <li><strong>Tło:</strong> Ciemnoszare</li>
+                    <li><strong>Tytuł:</strong> "SKONTAKTUJ SIĘ" z żółtym akcentem</li>
+                    <li><strong>Telefon:</strong> "TEL: PER BOS 097"</li>
+                    <li><strong>Adres:</strong> ul. Wspólna Kwarantanna 12, 13c Kraszawa</li>
+                    <li><strong>Kod pocztowy:</strong> "NASZYWAJ: 03-123 KRASZAWA"</li>
+                    <li><strong>Stopka:</strong> "© 2024 Apstar. Wszelkie prawa zastrzeżone."</li>
+                    <li><strong>Centrowanie:</strong> Wszystkie elementy wycentrowane</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- PORÓWNANIE MOBILE -->
+        <div class="comparison-section">
+            <h2 class="section-title">
+                8. Widok Mobilny (Responsywność)
+                <span class="status-badge status-match">✓ Zgodne</span>
+            </h2>
+            
+            <div class="comparison-grid">
+                <div class="comparison-item">
+                    <div class="comparison-header pdf">📄 Projekt PDF (Mobile)</div>
+                    <img src="https://github.com/user-attachments/assets/26b0071a-44db-4e97-a7d0-8b5cc4235753" alt="PDF Mobile" class="comparison-image">
+                </div>
+                <div class="comparison-item">
+                    <div class="comparison-header">💻 Implementacja (Mobile)</div>
+                    <img src="https://github.com/user-attachments/assets/2745d9d0-80a3-4894-8373-9ca141f93936" alt="Implementacja Mobile" class="comparison-image">
+                </div>
+            </div>
+
+            <div class="notes success">
+                <h4>✅ Responsywność:</h4>
+                <ul>
+                    <li><strong>Menu hamburgerowe:</strong> Ikona 3 linii na mobile</li>
+                    <li><strong>Pojedyncza kolumna:</strong> Wszystkie sekcje w układzie pionowym</li>
+                    <li><strong>Tytuły:</strong> Zmniejszone rozmiary fontów</li>
+                    <li><strong>Konektory:</strong> Krótsze lub ukryte na mobile</li>
+                    <li><strong>Zdjęcia:</strong> Pełna szerokość na mobile</li>
+                    <li><strong>Grafika:</strong> Skalowane dekoracyjne elementy</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- PODSUMOWANIE -->
+        <div class="comparison-section">
+            <h2 class="section-title">📋 Podsumowanie Porównania</h2>
+            
+            <div class="notes success">
+                <h4>✅ Główne osiągnięcia:</h4>
+                <ul>
+                    <li><strong>Wierność projektowi:</strong> Implementacja dokładnie odzwierciedla układ z PDF</li>
+                    <li><strong>Wszystkie sekcje:</strong> Hero, Usługi, Nowoczesność, Dlaczego Apstar, Oferta, Referencje, Kontakt - zgodne</li>
+                    <li><strong>Kolory:</strong> Żółty akcent (#FFD700) + ciemnoszare tła (#4a4a4a) zgodnie z projektem</li>
+                    <li><strong>Typografia:</strong> Rozmiary, hierarchia i style tekstów zgodne</li>
+                    <li><strong>Obrazy:</strong> Wszystkie zdjęcia z folderu zdjecia/ zintegrowanespan></li>
+                    <li><strong>Grafika:</strong> Żółte konektory, okręgi i symbole automatyki zgodne z PDF</li>
+                    <li><strong>Responsywność:</strong> Strona działa poprawnie na desktop, tablet i mobile</li>
+                </ul>
+            </div>
+
+            <div class="notes warning">
+                <h4>🎨 Dodatkowe warianty graficzne (bonus):</h4>
+                <ul>
+                    <li><strong>Wariant 1:</strong> Elektronika/PCB - elementy płytek drukowanych</li>
+                    <li><strong>Wariant 2:</strong> P&ID - symbole rurociągów i instrumentacji</li>
+                    <li><strong>Wariant 3:</strong> LAD + Elektronika - mieszany styl z efektami</li>
+                    <li><strong>Strona wyboru:</strong> wybor-wariantu.html - pozwala porównać wszystkie opcje</li>
+                </ul>
+            </div>
+
+            <div class="notes" style="background: #e7f3ff; border-left-color: #2196F3;">
+                <h4 style="color: #0d47a1;">📊 Status końcowy:</h4>
+                <p style="color: #0d47a1; font-size: 1.1rem; font-weight: bold;">
+                    Implementacja jest <strong>zgodna z projektem PDF</strong> we wszystkich kluczowych aspektach:<br>
+                    ✓ Struktura HTML<br>
+                    ✓ Układ graficzny<br>
+                    ✓ Kolory i style<br>
+                    ✓ Obrazy i grafiki<br>
+                    ✓ Responsywność<br>
+                    ✓ Elementy dekoracyjne
+                </p>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

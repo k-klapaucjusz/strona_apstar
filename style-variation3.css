@@ -172,96 +172,82 @@ body {
 /* Services Boxes Section */
 .services-boxes {
     background-color: var(--white);
-    padding: 3rem 0 5rem 0;
+    padding: 4rem 0;
     position: relative;
     margin-bottom: 60px;
 }
 
-.services-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-}
-
-.service-item {
+.service-box {
     display: grid;
-    grid-template-columns: 200px 1fr;
-    gap: 4rem;
-    align-items: flex-start;
-    margin-bottom: 2rem;
-    position: relative;
-}
-
-.service-item.last {
-    grid-template-columns: 200px 1fr 100px;
-    margin-bottom: 0;
-}
-
-.service-left {
-    display: flex;
-    gap: 1.5rem;
-    align-items: flex-start;
+    grid-template-columns: 80px 1fr 80px;
+    gap: 2rem;
+    margin-bottom: 3rem;
+    align-items: start;
     position: relative;
 }
 
 .service-connector {
-    width: 30px;
-    height: 250px;
-    border-left: 5px solid var(--yellow);
-    border-bottom: 5px solid var(--yellow);
-    flex-shrink: 0;
+    width: 60px;
+    height: 100%;
+    position: relative;
+    min-height: 200px;
 }
 
-.service-connector.short {
-    height: 80px;
+.service-connector.left {
+    border-left: 5px solid var(--yellow);
+    border-bottom: 5px solid var(--yellow);
+    border-bottom-left-radius: 0;
+    height: 150px;
+    margin-top: 40px;
+}
+
+.service-box:last-child .service-connector.left {
     border-bottom: none;
 }
 
-.service-title {
-    font-size: 1.1rem;
-    font-weight: 700;
-    color: var(--text-dark);
-    text-transform: uppercase;
-    letter-spacing: 0.3px;
-    line-height: 1.4;
-    margin: 0;
-    padding-top: 0.5rem;
-}
-
-.service-right {
-    width: 100%;
-    max-width: 600px;
-}
-
-.service-right img {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
-.service-end-circle {
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    padding-top: 2rem;
-}
-
-.service-end-circle::before {
-    content: '';
+.service-connector-circle {
     width: 60px;
-    height: 60px;
+    height: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.service-connector-circle.right::after {
+    content: '';
+    width: 40px;
+    height: 40px;
     background-color: var(--yellow);
     border-radius: 50%;
     display: block;
 }
 
-/* Remove old styles */
-.service-box,
-.service-connector-wrapper,
-.service-connector-circle,
-.service-content,
+.service-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.service-content h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
 .service-image {
-    /* These are now deprecated */
+    width: 100%;
+    max-width: 600px;
+}
+
+.service-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 /* Innovation Section */
@@ -1116,29 +1102,13 @@ section.visible {
         font-size: 2.5rem;
     }
 
-    .service-item {
-        grid-template-columns: 150px 1fr;
-        gap: 2rem;
+    .service-box {
+        grid-template-columns: 40px 1fr;
+        gap: 1rem;
     }
     
-    .service-item.last {
-        grid-template-columns: 150px 1fr;
-    }
-    
-    .service-end-circle {
+    .service-connector-circle {
         display: none;
-    }
-    
-    .service-connector {
-        height: 200px;
-    }
-    
-    .service-connector.short {
-        height: 60px;
-    }
-    
-    .service-title {
-        font-size: 1rem;
     }
 
     .oferta-grid {
@@ -1214,5 +1184,348 @@ section.visible {
     .process-symbols,
     .pid-symbols {
         gap: 10px;
+    }
+}
+
+/* ============================================
+   VARIATION 3: MIXED LAD + ELECTRONICS STYLE
+   ============================================ */
+
+/* Enhanced LAD with Electronic PCB Aesthetics */
+
+/* Add circuit board texture to transitions */
+.lad-transition::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        repeating-linear-gradient(
+            90deg,
+            rgba(255, 215, 0, 0.03) 0px,
+            rgba(255, 215, 0, 0.03) 1px,
+            transparent 1px,
+            transparent 10px
+        ),
+        repeating-linear-gradient(
+            0deg,
+            rgba(255, 215, 0, 0.03) 0px,
+            rgba(255, 215, 0, 0.03) 1px,
+            transparent 1px,
+            transparent 10px
+        );
+    z-index: 0;
+}
+
+/* Enhanced LAD Rails with PCB trace style */
+.lad-rail {
+    box-shadow: 
+        inset 0 0 10px rgba(255, 215, 0, 0.3),
+        0 0 10px rgba(255, 215, 0, 0.2);
+    background: linear-gradient(
+        to right,
+        var(--yellow) 0%,
+        #FFE55C 50%,
+        var(--yellow) 100%
+    );
+}
+
+/* Enhanced LAD Rungs */
+.lad-rung {
+    box-shadow: 0 0 8px rgba(255, 215, 0, 0.4);
+    background: linear-gradient(
+        to bottom,
+        var(--yellow) 0%,
+        #FFE55C 50%,
+        var(--yellow) 100%
+    );
+}
+
+/* Electronic-style contact with glow */
+.lad-contact {
+    filter: drop-shadow(0 0 5px rgba(255, 215, 0, 0.6));
+}
+
+.lad-contact::before,
+.lad-contact::after {
+    box-shadow: 0 0 5px rgba(255, 215, 0, 0.5);
+}
+
+/* Add circuit trace between contacts */
+.lad-contact.normally-closed::after {
+    box-shadow: 0 0 8px rgba(255, 215, 0, 0.7);
+}
+
+/* Electronic-style coil with IC chip appearance */
+.lad-coil {
+    filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.5));
+}
+
+.lad-coil::before,
+.lad-coil::after {
+    box-shadow: inset 0 0 5px rgba(255, 215, 0, 0.3);
+}
+
+/* Add resistor-like detail to coil */
+.lad-coil.output::before {
+    background: repeating-linear-gradient(
+        90deg,
+        var(--yellow) 0px,
+        var(--yellow) 2px,
+        transparent 2px,
+        transparent 4px
+    );
+}
+
+/* Enhanced LAD Node with solder pad appearance */
+.lad-node {
+    box-shadow: 
+        0 0 8px rgba(255, 215, 0, 0.6),
+        inset 0 0 4px rgba(255, 215, 0, 0.3);
+    border: 2px solid rgba(255, 215, 0, 0.4);
+}
+
+.lad-node::after {
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background-color: rgba(255, 215, 0, 0.3);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Electronic-style Timer with LED indicators */
+.lad-timer {
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+    background: linear-gradient(
+        135deg,
+        rgba(255, 215, 0, 0.1) 0%,
+        rgba(255, 215, 0, 0.05) 100%
+    );
+}
+
+.lad-timer::after {
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background-color: var(--yellow);
+    border-radius: 50%;
+    top: 5px;
+    right: 5px;
+    box-shadow: 0 0 8px rgba(255, 215, 0, 0.8);
+    animation: led-blink 2s infinite;
+}
+
+@keyframes led-blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+}
+
+/* Enhanced parallel branches with PCB traces */
+.lad-parallel-start,
+.lad-parallel-end {
+    box-shadow: 
+        0 0 8px rgba(255, 215, 0, 0.4),
+        inset 0 0 5px rgba(255, 215, 0, 0.2);
+    background: linear-gradient(
+        to bottom,
+        var(--yellow) 0%,
+        #FFE55C 50%,
+        var(--yellow) 100%
+    );
+}
+
+/* Add via holes at branch points */
+.lad-branch::before {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: var(--yellow);
+    border-radius: 50%;
+    left: 0;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 
+        0 0 6px rgba(255, 215, 0, 0.6),
+        inset 0 0 3px rgba(255, 215, 0, 0.4);
+}
+
+.lad-branch::after {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: var(--yellow);
+    border-radius: 50%;
+    right: 0;
+    top: 50%;
+    transform: translate(50%, -50%);
+    box-shadow: 
+        0 0 6px rgba(255, 215, 0, 0.6),
+        inset 0 0 3px rgba(255, 215, 0, 0.4);
+}
+
+/* Process symbols with electronic enhancement */
+.process-symbol.valve {
+    filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.5));
+}
+
+.process-symbol.pump {
+    box-shadow: 
+        0 0 10px rgba(255, 215, 0, 0.5),
+        inset 0 0 8px rgba(255, 215, 0, 0.2);
+}
+
+.process-symbol.pump::before,
+.process-symbol.pump::after {
+    filter: drop-shadow(0 0 4px rgba(255, 215, 0, 0.6));
+}
+
+.process-symbol.sensor {
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+    background: linear-gradient(
+        to bottom,
+        rgba(255, 215, 0, 0.1) 0%,
+        rgba(255, 215, 0, 0.05) 100%
+    );
+}
+
+.process-symbol.motor {
+    box-shadow: 
+        0 0 12px rgba(255, 215, 0, 0.6),
+        inset 0 0 8px rgba(255, 215, 0, 0.2);
+}
+
+.process-symbol.motor::before {
+    text-shadow: 0 0 8px rgba(255, 215, 0, 0.8);
+}
+
+/* PID symbols with PCB aesthetic */
+.pid-symbol.flow-transmitter,
+.pid-symbol.pressure-gauge,
+.pid-symbol.temperature-sensor {
+    box-shadow: 
+        0 0 10px rgba(255, 215, 0, 0.5),
+        inset 0 0 8px rgba(255, 215, 0, 0.2);
+    background: radial-gradient(
+        circle at center,
+        rgba(255, 215, 0, 0.15) 0%,
+        rgba(255, 215, 0, 0.05) 100%
+    );
+}
+
+.pid-symbol.flow-transmitter::before,
+.pid-symbol.pressure-gauge::before,
+.pid-symbol.temperature-sensor::before {
+    text-shadow: 0 0 6px rgba(255, 215, 0, 0.6);
+}
+
+.pid-symbol.level-indicator {
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+    background: linear-gradient(
+        to top,
+        rgba(255, 215, 0, 0.2) 0%,
+        rgba(255, 215, 0, 0.05) 100%
+    );
+}
+
+.pid-symbol.level-indicator::after {
+    box-shadow: 0 0 8px rgba(255, 215, 0, 0.4);
+}
+
+/* Add animated circuit pulse effect */
+@keyframes circuit-pulse {
+    0%, 100% {
+        box-shadow: 0 0 5px rgba(255, 215, 0, 0.3);
+    }
+    50% {
+        box-shadow: 0 0 15px rgba(255, 215, 0, 0.6);
+    }
+}
+
+.lad-transition:hover .lad-rail {
+    animation: circuit-pulse 2s infinite;
+}
+
+/* Add connection trace lines between elements */
+.lad-rung::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: repeating-linear-gradient(
+        90deg,
+        rgba(255, 215, 0, 0.3) 0px,
+        rgba(255, 215, 0, 0.3) 5px,
+        transparent 5px,
+        transparent 10px
+    );
+    top: -10px;
+    left: 0;
+}
+
+.lad-rung::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: repeating-linear-gradient(
+        90deg,
+        rgba(255, 215, 0, 0.3) 0px,
+        rgba(255, 215, 0, 0.3) 5px,
+        transparent 5px,
+        transparent 10px
+    );
+    bottom: -10px;
+    left: 0;
+}
+
+/* Enhanced innovation graphic with electronic details */
+.graphic-line {
+    box-shadow: 
+        0 0 8px rgba(255, 215, 0, 0.4),
+        0 2px 4px rgba(255, 215, 0, 0.2);
+}
+
+.circle {
+    box-shadow: 
+        0 0 15px rgba(255, 215, 0, 0.6),
+        inset 0 0 8px rgba(255, 215, 0, 0.3);
+    border: 3px solid rgba(255, 215, 0, 0.5);
+}
+
+.circle::before {
+    box-shadow: 0 0 8px rgba(255, 215, 0, 0.5);
+}
+
+.circle:nth-child(even) {
+    animation: led-blink 3s infinite;
+}
+
+/* Responsive adjustments */
+@media (max-width: 968px) {
+    .lad-rail,
+    .lad-rung {
+        box-shadow: 
+            0 0 5px rgba(255, 215, 0, 0.3);
+    }
+}
+
+@media (max-width: 640px) {
+    .lad-node::after,
+    .lad-timer::after,
+    .lad-branch::before,
+    .lad-branch::after {
+        display: none;
+    }
+    
+    .lad-rung::before,
+    .lad-rung::after {
+        display: none;
     }
 }

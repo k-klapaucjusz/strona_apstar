@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apstar - Wybór Wariantu Grafiki</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            width: 100%;
+        }
+        
+        h1 {
+            text-align: center;
+            color: white;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .variants-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .variant-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+        
+        .variant-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        }
+        
+        .variant-number {
+            display: inline-block;
+            background: linear-gradient(135deg, #FFD700, #FFA500);
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+        
+        .variant-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+        
+        .variant-subtitle {
+            font-size: 1rem;
+            color: #666;
+            margin-bottom: 1rem;
+        }
+        
+        .variant-description {
+            color: #777;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+        
+        .variant-features {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+        
+        .variant-features li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            color: #555;
+            font-size: 0.95rem;
+        }
+        
+        .variant-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #FFD700;
+            font-weight: bold;
+        }
+        
+        .btn-view {
+            display: block;
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: transform 0.2s ease;
+        }
+        
+        .btn-view:hover {
+            transform: scale(1.05);
+        }
+        
+        .current-version {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .current-version h2 {
+            color: #333;
+            margin-bottom: 1rem;
+        }
+        
+        .current-version p {
+            color: #666;
+            margin-bottom: 1.5rem;
+        }
+        
+        .current-version .btn-view {
+            display: inline-block;
+            width: auto;
+            padding: 1rem 2rem;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .subtitle {
+                font-size: 1rem;
+            }
+            
+            .variants-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>APSTAR - Automatyka Przemysłowa</h1>
+        <p class="subtitle">Wybierz wariant grafiki do wersji strony</p>
+        
+        <div class="current-version">
+            <h2>Wersja Podstawowa</h2>
+            <p>Obecna wersja z elementami LAD (Ladder Logic Diagrams)</p>
+            <a href="index.html" class="btn-view">Zobacz wersję podstawową</a>
+        </div>
+        
+        <br><br>
+        
+        <div class="variants-grid">
+            <!-- Variant 1: Electronics -->
+            <div class="variant-card">
+                <span class="variant-number">Wariant 1</span>
+                <h3 class="variant-title">Elektronika</h3>
+                <p class="variant-subtitle">Elementy obwodów elektronicznych</p>
+                <p class="variant-description">
+                    Grafika inspirowana płytkami PCB i komponentami elektronicznymi.
+                </p>
+                <ul class="variant-features">
+                    <li>Rezystory i kondensatory</li>
+                    <li>Układy scalone (IC)</li>
+                    <li>Tranzystory i diody</li>
+                    <li>Mikrokontrolery</li>
+                    <li>Ścieżki PCB</li>
+                    <li>Punkty lutownicze</li>
+                </ul>
+                <a href="variation1.html" class="btn-view">Zobacz Wariant 1</a>
+            </div>
+            
+            <!-- Variant 2: P&ID -->
+            <div class="variant-card">
+                <span class="variant-number">Wariant 2</span>
+                <h3 class="variant-title">P&ID</h3>
+                <p class="variant-subtitle">Piping & Instrumentation Diagrams</p>
+                <p class="variant-description">
+                    Grafika bazująca na symbolach rurociągów i instrumentacji przemysłowej.
+                </p>
+                <ul class="variant-features">
+                    <li>Rurociągi i zawory</li>
+                    <li>Pompy i sprężarki</li>
+                    <li>Wymienniki ciepła</li>
+                    <li>Zbiorniki i naczynia</li>
+                    <li>Regulatory PID</li>
+                    <li>Symbole bezpieczeństwa</li>
+                </ul>
+                <a href="variation2.html" class="btn-view">Zobacz Wariant 2</a>
+            </div>
+            
+            <!-- Variant 3: Mixed -->
+            <div class="variant-card">
+                <span class="variant-number">Wariant 3</span>
+                <h3 class="variant-title">LAD + Elektronika</h3>
+                <p class="variant-subtitle">Mieszany styl z efektami świetlnymi</p>
+                <p class="variant-description">
+                    Połączenie elementów LAD z estetyką płytek elektronicznych i efektami podświetlenia.
+                </p>
+                <ul class="variant-features">
+                    <li>Elementy LAD z blaskiem</li>
+                    <li>Estetyka PCB</li>
+                    <li>Animowane LED</li>
+                    <li>Punkty lutownicze</li>
+                    <li>Pulsujące obwody</li>
+                    <li>Efekty cieniowania</li>
+                </ul>
+                <a href="variation3.html" class="btn-view">Zobacz Wariant 3</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
