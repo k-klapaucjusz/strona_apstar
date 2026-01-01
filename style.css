@@ -176,45 +176,48 @@ body {
 
 .service-box {
     display: grid;
-    grid-template-columns: 60px 1fr;
+    grid-template-columns: 80px 1fr 80px;
     gap: 2rem;
     margin-bottom: 3rem;
-    align-items: center;
+    align-items: start;
     position: relative;
 }
 
 .service-connector {
-    width: 50px;
+    width: 60px;
     height: 100%;
     position: relative;
+    min-height: 200px;
 }
 
 .service-connector.left {
-    border-left: 4px solid var(--yellow);
-    border-bottom: 4px solid var(--yellow);
-    height: 80px;
+    border-left: 5px solid var(--yellow);
+    border-bottom: 5px solid var(--yellow);
+    border-bottom-left-radius: 0;
+    height: 150px;
+    margin-top: 40px;
+}
+
+.service-box:last-child .service-connector.left {
+    border-bottom: none;
 }
 
 .service-connector-circle {
-    width: 50px;
-    height: 50px;
-    position: absolute;
-    right: 20px;
-    top: 50%;
-    transform: translateY(-50%);
+    width: 60px;
+    height: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .service-connector-circle.right::after {
     content: '';
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
     background-color: var(--yellow);
     border-radius: 50%;
     display: block;
-    position: absolute;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
 }
 
 .service-content {
@@ -271,13 +274,17 @@ body {
 .innovation-graphic {
     margin: 3rem 0;
     position: relative;
+    height: 200px;
 }
 
 .graphic-line {
-    height: 4px;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 5px;
     background-color: var(--yellow);
-    width: 100%;
-    margin-bottom: 2rem;
+    transform: translateY(-50%);
 }
 
 .graphic-circles {
@@ -285,11 +292,15 @@ body {
     justify-content: space-around;
     max-width: 600px;
     margin: 0 auto;
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    align-items: center;
 }
 
 .circle {
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     background-color: var(--yellow);
     position: relative;
@@ -298,12 +309,17 @@ body {
 .circle::before {
     content: '';
     position: absolute;
-    width: 4px;
-    height: 100px;
+    width: 5px;
+    height: 60px;
     background-color: var(--yellow);
     left: 50%;
     transform: translateX(-50%);
-    top: -100px;
+    top: -65px;
+}
+
+.circle:nth-child(even)::before {
+    top: auto;
+    bottom: -65px;
 }
 
 .footer-text {
@@ -318,15 +334,28 @@ body {
     color: var(--white);
     padding: 5rem 0;
     position: relative;
+    overflow: visible;
 }
 
 .why-choose-connector {
     position: absolute;
-    top: -50px;
-    left: 20px;
-    width: 4px;
-    height: 100px;
+    top: -80px;
+    left: 40px;
+    width: 5px;
+    height: 120px;
     background-color: var(--yellow);
+}
+
+.why-choose-connector::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 40px;
+    background-color: var(--yellow);
+    border-radius: 50%;
+    transform: translate(-50%, 50%);
 }
 
 .why-choose h2 {
@@ -355,8 +384,8 @@ body {
 }
 
 .point-icon {
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
     background-color: var(--yellow);
     border-radius: 50%;
     flex-shrink: 0;
@@ -392,11 +421,23 @@ body {
 
 .why-connector-bottom {
     position: absolute;
-    bottom: -50px;
-    right: 20px;
-    width: 4px;
-    height: 100px;
+    bottom: -80px;
+    right: 40px;
+    width: 5px;
+    height: 120px;
     background-color: var(--yellow);
+}
+
+.why-connector-bottom::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    background-color: var(--yellow);
+    border-radius: 50%;
+    transform: translate(50%, -50%);
 }
 
 /* Oferta Section */
@@ -465,14 +506,17 @@ body {
 
 .oferta-graphic {
     margin-top: 4rem;
-    height: 100px;
+    height: 150px;
     position: relative;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 1rem;
 }
 
 .graphic-bars {
     display: flex;
-    gap: 1rem;
-    justify-content: center;
+    gap: 0.5rem;
     align-items: flex-end;
     height: 100%;
 }
@@ -480,9 +524,16 @@ body {
 .graphic-bars::before,
 .graphic-bars::after {
     content: '';
-    width: 30px;
-    height: 100%;
+    width: 20px;
     background-color: var(--yellow);
+}
+
+.graphic-bars::before {
+    height: 100%;
+}
+
+.graphic-bars::after {
+    height: 100%;
 }
 
 /* Referencje Section */
