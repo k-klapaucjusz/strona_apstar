@@ -825,10 +825,3 @@ section.visible {
         grid-template-columns: 1fr;
     }
 }
-
-/* Smooth scrolling enhancements */
-@media (prefers-reduced-motion: no-preference) {
-    html {
-        scroll-behavior: smooth;
-    }
-}

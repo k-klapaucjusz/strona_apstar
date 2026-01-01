@@ -149,9 +149,6 @@ function simulateFormSubmission(data) {
         submitBtn.textContent = originalText;
         submitBtn.disabled = false;
         
-        // Log form data (in development)
-        console.log('Form submitted:', data);
-        
         // In production, you would send this to a server:
         // fetch('/api/contact', {
         //     method: 'POST',
@@ -272,19 +269,6 @@ scrollTopBtn.addEventListener('mouseleave', () => {
     scrollTopBtn.style.backgroundColor = 'var(--primary-color)';
 });
 
-// Performance optimization: Debounce scroll events
-function debounce(func, wait) {
-    let timeout;
-    return function executedFunction(...args) {
-        const later = () => {
-            clearTimeout(timeout);
-            func(...args);
-        };
-        clearTimeout(timeout);
-        timeout = setTimeout(later, wait);
-    };
-}
-
 // Smooth reveal for tech items
 const techItems = document.querySelectorAll('.tech-item');
 const techObserver = new IntersectionObserver((entries) => {
@@ -332,5 +316,3 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         }
     });
 });
-
-console.log('Apstar website loaded successfully!');
