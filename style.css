@@ -157,6 +157,8 @@ body {
     background-color: var(--dark-gray);
     color: var(--white);
     padding: 3rem 0;
+    position: relative;
+    margin-bottom: 60px;
 }
 
 .gray-info p {
@@ -172,6 +174,7 @@ body {
     background-color: var(--white);
     padding: 4rem 0;
     position: relative;
+    margin-bottom: 60px;
 }
 
 .service-box {
@@ -252,6 +255,7 @@ body {
     background-color: var(--light-gray);
     padding: 4rem 0;
     position: relative;
+    margin-bottom: 60px;
 }
 
 .innovation h2 {
@@ -335,6 +339,7 @@ body {
     padding: 5rem 0;
     position: relative;
     overflow: visible;
+    margin-bottom: 60px;
 }
 
 .why-choose-connector {
@@ -445,6 +450,7 @@ body {
     background-color: var(--white);
     padding: 5rem 0;
     position: relative;
+    margin-bottom: 60px;
 }
 
 .oferta h2 {
@@ -540,6 +546,8 @@ body {
 .referencje {
     background-color: var(--light-gray);
     padding: 5rem 0;
+    position: relative;
+    margin-bottom: 60px;
 }
 
 .referencje h2 {
@@ -638,6 +646,423 @@ section.visible {
     transform: translateY(0);
 }
 
+/* LAD (Ladder Logic Diagram) Transition Elements */
+.lad-transition {
+    position: relative;
+    width: 100%;
+    height: 120px;
+    margin: 0;
+    overflow: visible;
+}
+
+.lad-transition.bottom {
+    position: absolute;
+    bottom: -60px;
+    left: 0;
+    right: 0;
+    z-index: 10;
+}
+
+.lad-rail {
+    position: absolute;
+    width: 5px;
+    height: 100%;
+    background-color: var(--yellow);
+    top: 0;
+}
+
+.lad-rail.left {
+    left: 10%;
+}
+
+.lad-rail.right {
+    right: 10%;
+}
+
+.lad-rung {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    right: 10%;
+    height: 4px;
+    background-color: var(--yellow);
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0 20px;
+}
+
+/* LAD Contact (Normally Open) - looks like | | */
+.lad-contact {
+    width: 30px;
+    height: 50px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+}
+
+.lad-contact::before,
+.lad-contact::after {
+    content: '';
+    width: 4px;
+    height: 100%;
+    background-color: var(--yellow);
+}
+
+/* LAD Contact (Normally Closed) - looks like | / | */
+.lad-contact.normally-closed::before {
+    position: relative;
+}
+
+.lad-contact.normally-closed::after {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 4px;
+    background-color: var(--yellow);
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%) rotate(-45deg);
+}
+
+/* LAD Coil (Output) - looks like ( ) */
+.lad-coil {
+    width: 40px;
+    height: 50px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lad-coil::before,
+.lad-coil::after {
+    content: '';
+    width: 15px;
+    height: 40px;
+    border: 4px solid var(--yellow);
+    border-radius: 50%;
+}
+
+.lad-coil::before {
+    border-right: none;
+    margin-right: -4px;
+}
+
+.lad-coil::after {
+    border-left: none;
+    margin-left: -4px;
+}
+
+.lad-coil.output::before {
+    content: '';
+    position: absolute;
+    width: 4px;
+    height: 30px;
+    background-color: var(--yellow);
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* LAD Node (Connection Point) */
+.lad-node {
+    width: 12px;
+    height: 12px;
+    background-color: var(--yellow);
+    border-radius: 50%;
+    position: relative;
+}
+
+/* LAD Timer Symbol */
+.lad-timer {
+    width: 50px;
+    height: 50px;
+    border: 4px solid var(--yellow);
+    border-radius: 4px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lad-timer::before {
+    content: 'TON';
+    color: var(--yellow);
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* LAD Parallel Branches */
+.lad-transition.complex .lad-rung {
+    display: grid;
+    grid-template-columns: auto auto 1fr auto auto;
+    gap: 20px;
+}
+
+.lad-parallel-start,
+.lad-parallel-end {
+    width: 4px;
+    height: 80px;
+    background-color: var(--yellow);
+    position: relative;
+}
+
+.lad-branch {
+    position: absolute;
+    height: 4px;
+    background-color: var(--yellow);
+    left: 0;
+    right: 0;
+}
+
+.lad-branch:first-of-type {
+    top: 20%;
+}
+
+.lad-branch:last-of-type {
+    top: 80%;
+}
+
+/* Process Automation Symbols Transition */
+.process-symbols-transition {
+    position: relative;
+    width: 100%;
+    height: 100px;
+    margin: 3rem 0;
+}
+
+.process-line {
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    right: 5%;
+    height: 5px;
+    background-color: var(--yellow);
+    transform: translateY(-50%);
+}
+
+.process-symbols {
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    right: 5%;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+/* Valve Symbol */
+.process-symbol.valve {
+    width: 0;
+    height: 0;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    border-bottom: 40px solid var(--yellow);
+    position: relative;
+}
+
+.process-symbol.valve::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    border-top: 40px solid var(--yellow);
+    bottom: -40px;
+    left: -25px;
+}
+
+/* Pump Symbol */
+.process-symbol.pump {
+    width: 50px;
+    height: 50px;
+    border: 5px solid var(--yellow);
+    border-radius: 50%;
+    position: relative;
+}
+
+.process-symbol.pump::before {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 5px;
+    background-color: var(--yellow);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.process-symbol.pump::after {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 5px;
+    background-color: var(--yellow);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+/* Sensor Symbol */
+.process-symbol.sensor {
+    width: 40px;
+    height: 50px;
+    border: 5px solid var(--yellow);
+    border-radius: 20px 20px 0 0;
+    border-bottom: none;
+    position: relative;
+}
+
+.process-symbol.sensor::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: var(--yellow);
+    border-radius: 50%;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Motor Symbol */
+.process-symbol.motor {
+    width: 50px;
+    height: 50px;
+    border: 5px solid var(--yellow);
+    border-radius: 50%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.process-symbol.motor::before {
+    content: 'M';
+    color: var(--yellow);
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* PID Symbols Transition */
+.pid-symbols-transition {
+    position: relative;
+    width: 100%;
+    height: 100px;
+    margin: 3rem 0;
+}
+
+.pid-line {
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    right: 5%;
+    height: 5px;
+    background-color: var(--yellow);
+    transform: translateY(-50%);
+}
+
+.pid-symbols {
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    right: 5%;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+/* Flow Transmitter (FT) */
+.pid-symbol.flow-transmitter {
+    width: 50px;
+    height: 50px;
+    border: 5px solid var(--yellow);
+    border-radius: 50%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pid-symbol.flow-transmitter::before {
+    content: 'FT';
+    color: var(--yellow);
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* Pressure Gauge (PT) */
+.pid-symbol.pressure-gauge {
+    width: 50px;
+    height: 50px;
+    border: 5px solid var(--yellow);
+    border-radius: 50%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pid-symbol.pressure-gauge::before {
+    content: 'PT';
+    color: var(--yellow);
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* Level Indicator (LT) */
+.pid-symbol.level-indicator {
+    width: 40px;
+    height: 50px;
+    border: 5px solid var(--yellow);
+    border-radius: 4px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pid-symbol.level-indicator::before {
+    content: 'LT';
+    color: var(--yellow);
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.pid-symbol.level-indicator::after {
+    content: '';
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+    right: 5px;
+    height: 15px;
+    background-color: var(--yellow);
+    opacity: 0.3;
+}
+
+/* Temperature Sensor (TT) */
+.pid-symbol.temperature-sensor {
+    width: 50px;
+    height: 50px;
+    border: 5px solid var(--yellow);
+    border-radius: 50%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pid-symbol.temperature-sensor::before {
+    content: 'TT';
+    color: var(--yellow);
+    font-size: 14px;
+    font-weight: bold;
+}
+
 /* Responsive Design */
 @media (max-width: 968px) {
     .nav-menu {
@@ -697,6 +1122,31 @@ section.visible {
     .why-points {
         grid-template-columns: 1fr;
     }
+    
+    /* Simplify LAD elements on mobile */
+    .lad-rail.left {
+        left: 5%;
+    }
+    
+    .lad-rail.right {
+        right: 5%;
+    }
+    
+    .lad-rung {
+        left: 5%;
+        right: 5%;
+    }
+    
+    .lad-contact,
+    .lad-coil,
+    .lad-timer {
+        transform: scale(0.7);
+    }
+    
+    .process-symbols .process-symbol,
+    .pid-symbols .pid-symbol {
+        transform: scale(0.7);
+    }
 }
 
 @media (max-width: 640px) {
@@ -717,5 +1167,22 @@ section.visible {
     .oferta h2,
     .referencje h2 {
         font-size: 2rem;
+    }
+    
+    /* Further simplify LAD elements on small mobile */
+    .lad-transition {
+        height: 80px;
+    }
+    
+    .lad-contact,
+    .lad-coil,
+    .lad-timer,
+    .lad-node {
+        transform: scale(0.5);
+    }
+    
+    .process-symbols,
+    .pid-symbols {
+        gap: 10px;
     }
 }

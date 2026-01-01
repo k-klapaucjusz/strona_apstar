@@ -42,12 +42,34 @@
                 </div>
             </div>
         </div>
+        <!-- LAD Transition Element -->
+        <div class="lad-transition bottom">
+            <div class="lad-rail left"></div>
+            <div class="lad-rail right"></div>
+            <div class="lad-rung">
+                <div class="lad-contact"></div>
+                <div class="lad-contact"></div>
+                <div class="lad-coil"></div>
+            </div>
+        </div>
     </section>
 
     <!-- Gray Info Section -->
     <section class="gray-info">
         <div class="container">
             <p>Nasza działalność jest wspierana przez partnerstwa ze wiodącymi automatycznymi i kontrolowanymi nowymi oraz mediami technicznymi i wyposażeniem.</p>
+        </div>
+        <!-- LAD Transition Element -->
+        <div class="lad-transition bottom">
+            <div class="lad-rail left"></div>
+            <div class="lad-rail right"></div>
+            <div class="lad-rung">
+                <div class="lad-node"></div>
+                <div class="lad-contact normally-closed"></div>
+                <div class="lad-node"></div>
+                <div class="lad-contact"></div>
+                <div class="lad-node"></div>
+            </div>
         </div>
     </section>
 
@@ -85,6 +107,24 @@
                 <div class="service-connector-circle right"></div>
             </div>
         </div>
+        <!-- LAD Transition with Parallel Branches -->
+        <div class="lad-transition bottom complex">
+            <div class="lad-rail left"></div>
+            <div class="lad-rail right"></div>
+            <div class="lad-rung">
+                <div class="lad-node"></div>
+                <div class="lad-parallel-start"></div>
+                <div class="lad-branch">
+                    <div class="lad-contact"></div>
+                </div>
+                <div class="lad-branch">
+                    <div class="lad-contact normally-closed"></div>
+                </div>
+                <div class="lad-parallel-end"></div>
+                <div class="lad-coil"></div>
+                <div class="lad-node"></div>
+            </div>
+        </div>
     </section>
 
     <!-- Innovation Section -->
@@ -102,6 +142,16 @@
                 </div>
             </div>
             <p class="footer-text">Czyli Poblem Było.</p>
+        </div>
+        <!-- Process Symbol Transition -->
+        <div class="process-symbols-transition">
+            <div class="process-line"></div>
+            <div class="process-symbols">
+                <div class="process-symbol valve"></div>
+                <div class="process-symbol pump"></div>
+                <div class="process-symbol sensor"></div>
+                <div class="process-symbol motor"></div>
+            </div>
         </div>
     </section>
 
@@ -135,6 +185,18 @@
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
             </div>
             <div class="why-connector-bottom"></div>
+        </div>
+        <!-- LAD Transition with Timer -->
+        <div class="lad-transition bottom">
+            <div class="lad-rail left"></div>
+            <div class="lad-rail right"></div>
+            <div class="lad-rung">
+                <div class="lad-node"></div>
+                <div class="lad-contact"></div>
+                <div class="lad-timer"></div>
+                <div class="lad-contact"></div>
+                <div class="lad-node"></div>
+            </div>
         </div>
     </section>
 
@@ -174,6 +236,16 @@
                 <div class="graphic-bars"></div>
             </div>
         </div>
+        <!-- PID Symbol Transition -->
+        <div class="pid-symbols-transition">
+            <div class="pid-line"></div>
+            <div class="pid-symbols">
+                <div class="pid-symbol flow-transmitter"></div>
+                <div class="pid-symbol pressure-gauge"></div>
+                <div class="pid-symbol level-indicator"></div>
+                <div class="pid-symbol temperature-sensor"></div>
+            </div>
+        </div>
     </section>
 
     <!-- Referencje Section -->
@@ -192,6 +264,18 @@
                     <h3>Wykończenie Zakładu Utylizacji Wód z A. w Gnieźnie</h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                 </div>
+            </div>
+        </div>
+        <!-- LAD Final Transition -->
+        <div class="lad-transition bottom">
+            <div class="lad-rail left"></div>
+            <div class="lad-rail right"></div>
+            <div class="lad-rung">
+                <div class="lad-node"></div>
+                <div class="lad-contact"></div>
+                <div class="lad-contact"></div>
+                <div class="lad-coil output"></div>
+                <div class="lad-node"></div>
             </div>
         </div>
     </section>
