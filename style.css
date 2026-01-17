@@ -1217,7 +1217,33 @@ section.visible {
     }
 }
 
-/* Styk Normalnie Otwarty (NO) - Żółty */
+/* Styk Normalnie Otwarty (NO) - Żółty z Power Rail */
+.styk-no-zolty-container {
+    display: flex;
+    align-items: center;
+    gap: 0;
+}
+
+.power-rail {
+    display: flex;
+    align-items: center;
+    height: 120px;
+    position: relative;
+}
+
+.power-rail-vertical {
+    width: 8px;
+    height: 100%;
+    background-color: var(--yellow);
+    border-radius: 4px;
+}
+
+.power-rail-horizontal {
+    width: 30px;
+    height: 8px;
+    background-color: var(--yellow);
+}
+
 .styk-no-zolty {
     display: inline-flex;
     align-items: stretch;
