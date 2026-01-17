@@ -1216,3 +1216,42 @@ section.visible {
         gap: 10px;
     }
 }
+
+/* Styk Normalnie Otwarty (NO) - Żółty */
+.styk-no-zolty {
+    display: inline-flex;
+    align-items: stretch;
+    justify-content: center;
+    gap: 25px;
+    width: 90px;
+    height: 120px;
+    position: relative;
+}
+
+.styk-no-zolty .styk-lewa,
+.styk-no-zolty .styk-prawa {
+    width: 14px;
+    height: 100%;
+    background-color: var(--yellow);
+    border-radius: 7px;
+}
+
+/* Kontener prezentacyjny dla styku */
+.styk-no-zolty-showcase {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    background-color: var(--white);
+    margin: 2rem 0;
+}
+
+.styk-no-zolty-showcase .styk-label {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: var(--dark-gray);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
